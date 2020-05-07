@@ -1,0 +1,10 @@
+module.exports = {
+	name: 'name',
+	description: '',
+    args: true,
+    usage: '[arg]',
+    guildOnly: true,
+	execute(message, args) {
+		message.channel.send(`Arguments: ${args}\nArguments length: ${args.length}`);
+	},
+};
