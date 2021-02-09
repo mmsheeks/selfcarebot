@@ -1,0 +1,23 @@
+{
+  "name": "selfcarebot",
+  "version": "1.0.0",
+  "description": "A simple Discord bot to help you take care of yourself",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmsheeks/selfcarebot.git"
+  },
+  "author": "Martin Sheeks",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/mmsheeks/selfcarebot/issues"
+  },
+  "homepage": "https://github.com/mmsheeks/selfcarebot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "require": "^2.4.20"
+  }
+}

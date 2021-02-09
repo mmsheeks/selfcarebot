@@ -99,5 +99,8 @@ client.on('message', message => {
         message.reply('Uh oh. Something went wrong.');
     }
 });
-
-client.login(token);
+try {
+	client.login(token);
+} catch( e ) {
+	console.log(e);
+}
