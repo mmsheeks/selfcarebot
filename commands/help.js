@@ -6,7 +6,7 @@ module.exports = {
     aliases: ['commands'],
     usage: '[command name]',
     cooldown: 5,
-    execute(message, args) {
+    execute(message, args, cooldowns) {
         const data = [];
         const { commands } = message.client;
 
@@ -38,6 +38,7 @@ module.exports = {
         if( command.aliases ) data.push(`*Aliases:* ${command.aliases.join(', ')}`);
         if( command.description) data.push(`*Description:* ${command.description}`);
         if( command.usage) data.push(`*Usage:* ${prefix}${command.name} ${command.usage}`);
+        if( command.admin ) data.push(`*Admin Only*`);
 
         data.push(`*Cooldown:* ${command.cooldown || defaultCooldown} second(s)`);
 

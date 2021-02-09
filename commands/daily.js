@@ -4,8 +4,8 @@ module.exports = {
     args: false,
     usage: '',
     guildOnly: false,
-    cooldown: 86400,
-	execute(message, args) {
+    cooldown: 64800,
+	execute(message, args, cooldowns) {
         function diceRoller(n, x) {
             function roll(x) {
                 return Math.floor(Math.random() * (x-1) ) + 1;

@@ -1,7 +1,7 @@
 'use strict';
 const fs = require('fs');
 const Discord = require('discord.js');
-const { prefix, token, defaultCooldown } = require('./config.json');
+const { prefix, token, defaultCooldown, admin } = require('./config.json');
 
 const client = new Discord.Client();
 
@@ -35,6 +35,11 @@ client.on('message', message => {
 
     // if we didn't find a command, exit now
     if( !command ) return;
+
+    // if the command is admin only, restrict usage
+    if( command.admin && message.author.username !== admin ) {
+        return message.reply('Sorry, that command is for admins only.');
+    }
 
     // if this needs to be in a server, make sure it is.
     if( command.guildOnly && message.channel.type !== 'text' ) {
@@ -88,7 +93,7 @@ client.on('message', message => {
 
     // try to run the command, catch the error if there is one.
     try {
-        command.execute(message, args);
+        command.execute(message, args, cooldowns);
     } catch (error) {
         console.error(error);
         message.reply('Uh oh. Something went wrong.');

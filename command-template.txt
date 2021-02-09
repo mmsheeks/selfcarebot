@@ -4,7 +4,8 @@ module.exports = {
     args: true,
     usage: '[arg]',
     guildOnly: true,
-	execute(message, args) {
+	admin: false,
+	execute(message, args, cooldowns) {
 		message.channel.send(`Arguments: ${args}\nArguments length: ${args.length}`);
 	},
 };

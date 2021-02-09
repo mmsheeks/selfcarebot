@@ -3,7 +3,8 @@ module.exports = {
     description: 'Reloads a command',
     args: true,
     usage: '[command]',
-    execute(message, args) {
+    admin: true,
+    execute(message, args, cooldowns) {
         const commandName = args[0].toLowerCase();
         const command = message.client.commands.get(commandName) || message.client.commands.find(c => c.aliases && c.aliases.includes(commandName));
 

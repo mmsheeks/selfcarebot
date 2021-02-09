@@ -3,7 +3,7 @@ module.exports = {
 	description: 'For when you need a little pick me up!',
     args: false,
     guildOnly: false,
-	execute(message, args) {
+	execute(message, args, cooldowns) {
 		var index = Math.floor(Math.random() * (50-1) ) + 1;
         const messages = [
             'You are more fun than anyone or anything I know, including bubble wrap.',
